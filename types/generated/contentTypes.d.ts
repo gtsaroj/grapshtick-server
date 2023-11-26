@@ -378,6 +378,9 @@ export interface ApiCredentialCredential extends Schema.CollectionType {
     email: Attribute.Email;
     username: Attribute.String & Attribute.Required;
     password: Attribute.Password & Attribute.Required;
+    hours: Attribute.Integer;
+    minutes: Attribute.Integer;
+    seconds: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -402,6 +405,7 @@ export interface ApiOfferOffer extends Schema.CollectionType {
     singularName: 'offer';
     pluralName: 'offers';
     displayName: 'offer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -412,9 +416,9 @@ export interface ApiOfferOffer extends Schema.CollectionType {
     oldprice: Attribute.Decimal;
     newprice: Attribute.Decimal;
     img: Attribute.Media;
-    hours: Attribute.Time;
-    minutes: Attribute.Time;
-    seconds: Attribute.Time;
+    hours: Attribute.Integer;
+    minutes: Attribute.Integer;
+    seconds: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "offer",
     "pluralName": "offers",
-    "displayName": "offer"
+    "displayName": "offer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,23 +25,24 @@
       "type": "decimal"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "hours": {
-      "type": "time"
+      "type": "integer"
     },
     "minutes": {
-      "type": "time"
+      "type": "integer"
     },
     "seconds": {
-      "type": "time"
+      "type": "integer"
     }
   }
 }
