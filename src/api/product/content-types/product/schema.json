@@ -39,6 +39,9 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "specification": {
+      "type": "string"
     }
   }
 }
