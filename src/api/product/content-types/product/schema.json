@@ -21,9 +21,8 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "trending",
-        "All Products are availabe here!",
-        "featured"
+        "Latest Stickers",
+        "Trending Stickers"
       ]
     },
     "img": {
@@ -41,7 +40,7 @@
       "type": "decimal"
     },
     "specification": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

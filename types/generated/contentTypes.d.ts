@@ -362,43 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCredentialCredential extends Schema.CollectionType {
-  collectionName: 'credentials';
-  info: {
-    singularName: 'credential';
-    pluralName: 'credentials';
-    displayName: 'credential';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String & Attribute.Required;
-    email: Attribute.Email;
-    username: Attribute.String & Attribute.Required;
-    password: Attribute.Password & Attribute.Required;
-    hours: Attribute.Integer;
-    minutes: Attribute.Integer;
-    seconds: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::credential.credential',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::credential.credential',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiOfferOffer extends Schema.CollectionType {
   collectionName: 'offers';
   info: {
@@ -451,12 +414,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     desc: Attribute.Text;
-    type: Attribute.Enumeration<
-      ['trending', 'All Products are availabe here!', 'featured']
-    >;
+    type: Attribute.Enumeration<['Latest Stickers', 'Trending Stickers']>;
     img: Attribute.Media;
     price: Attribute.Decimal;
-    specification: Attribute.String;
+    specification: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -909,7 +870,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::credential.credential': ApiCredentialCredential;
       'api::offer.offer': ApiOfferOffer;
       'api::product.product': ApiProductProduct;
       'plugin::upload.file': PluginUploadFile;
